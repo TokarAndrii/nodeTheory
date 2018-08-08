@@ -1,0 +1,14 @@
+{
+  "name": "module1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon --inspect --ignore ./test  index.js",
+    "production": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
