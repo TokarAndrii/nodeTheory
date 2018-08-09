@@ -1,7 +1,8 @@
 [
   {
     "username": "user1",
-    "password": "pass1"
+    "password": "pass1",
+    "books": []
   },
   {
     "username": "user2",
@@ -10,15 +11,21 @@
       {
         "title": "JS is suck!",
         "author": "PHP Developer"
+      },
+      {
+        "title": "React is suck again!",
+        "author": "Suck Developer again"
       }
     ]
   },
   {
     "username": "user3",
-    "password": "pass3"
+    "password": "pass3",
+    "books": []
   },
   {
     "username": "user4",
-    "password": "pass4"
+    "password": "pass4",
+    "books": []
   }
 ]
