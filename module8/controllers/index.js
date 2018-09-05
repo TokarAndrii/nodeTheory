@@ -1,6 +1,6 @@
 const User = require('../model/user');
 
-User.create({
+/*User.create({
     firstName: "Andrii",
     secondName: "Tokar",
     age: 35,
@@ -8,7 +8,7 @@ User.create({
     maritalStatus: true,
     position: "developer",
     comments: "some comments"
-})
+});*/
 
 module.exports = {
 
@@ -16,23 +16,25 @@ module.exports = {
 
         const {users, greeting} = req;
 
-        res.json({
+        res.set('Content-Type', 'text/html');
 
-            users: users,
+        const result = `
+    <h3 style="text-align:center;">${greeting.message} date: ${greeting.date}</h3>
+    <ul style="list-style-type: none; display: flex; flex-direction: column; justify-content: center; align-items: center">
+            ${users.map(curr => (`
+                <li style="border: 1px solid black; padding-left: 16px; padding-top: 8px; padding-bottom: 8px; width: 500px; margin-top: 8px"><span>firstName: <b>${curr.firstName}</b> </span>
+                     <span>secondName: <b>${curr.secondName}</b> </span>
+                     <span>age: <b>${curr.age} </b></span>
+                     <span>position: <b>${curr.position} </b></span>
+                      <p>comments: <b>${curr.comments} </b></p>
+                      <span>date: <b>${curr.date} </b></span>
+                </li>`))}
+   
+    </ul>
+`;
 
-            greeting: greeting
-        });
-    },
+        res.send(result.replace(/,/g, ""))
 
-    async getAllUsers(req, res, next) {
-
-        const users = await User.find();
-
-        console.log(users, 'users find');
-
-        req.users = users;
-
-        next();
     },
 
     getGreeting(req, res, next) {
@@ -40,15 +42,24 @@ module.exports = {
 
         const greeting = {
 
-            date: Date.now(),
+            "date": new Date(),
 
-            message: "Hello from my app, user:"
+            message: "Hello from my app, users:"
         };
 
-        req.greeting = {greeting};
+        req.greeting = greeting;
 
         next();
-    }
+    },
+
+    async getAllUsers(req, res, next) {
+
+        const users = await User.find();
+
+        req.users = users;
+
+        next();
+    },
 
 };
 
