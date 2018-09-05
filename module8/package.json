@@ -1,0 +1,19 @@
+{
+  "name": "module8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "set NODE_ENV=test mocha",
+    "start": "set NODE_ENV=development nodemon app.js",
+    "production": "set NODE_ENV=production node app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.12"
+  }
+}
