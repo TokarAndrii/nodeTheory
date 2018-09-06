@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "12affb03-5b4b-4950-a6ac-1b54d28f583b",
+		"name": "PostgresAppCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/Jorah",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/users/Jorah",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"Jorah"
+					]
+				},
+				"description": "GET ONE user by param;"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/Jorah",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"firstName\": \"Jorah Junior\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/Jorah",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"Jorah"
+					]
+				},
+				"description": "UPDATE ONE user by param;\n\n{\n \"firstName\": \"Jorah Junior\"\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				},
+				"description": "DELETE ALL users;"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/Jorah",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/users/Jorah",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"Jorah"
+					]
+				},
+				"description": "DELETE ONE user by param;\n\nhttp://localhost:8080/users/:firstname "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/newone",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lastName\": \"someLastName\",\n\t\"age\": 50\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/newone",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"newone"
+					]
+				},
+				"description": "CREATE ONE user by param;\nhttp://localhost:8080/users/:firstname\n{\n\t\"lastName\": \"someLastName\",\n\t\"age\": 50\n}"
+			},
+			"response": []
+		}
+	]
+}
