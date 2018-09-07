@@ -16,65 +16,73 @@ const User = sequelize.define('user', {
 });
 
 // force: true will drop the table if it already exists
-User.sync({force: true}).then(() => {
+//module.exports.create = User.sync({force: true}).then(() => {
+module.exports.create = User.sync().then(() => {
     return User.bulkCreate([
-        {
-            firstName: 'Tyrion',
+            {
+                firstName: 'Tyrion',
 
-            lastName: 'Lannister',
+                lastName: 'Lannister',
 
-            age: 25
-        },
-        {
-            firstName: 'Barristan',
+                age: 25
+            },
+            {
+                firstName: 'Barristan',
 
-            lastName: 'Selmy',
+                lastName: 'Selmy',
 
-            age: 45
-        },
-        {
-            firstName: 'Daenerys',
+                age: 45
+            },
+            {
+                firstName: 'Daenerys',
 
-            lastName: 'Targaryen',
+                lastName: 'Targaryen',
 
-            age: 18
-        },
-        {
-            firstName: 'Jorah',
+                age: 18
+            },
+            {
+                firstName: 'Jorah',
 
-            lastName: 'Mormont',
+                lastName: 'Mormont',
 
-            age: 40
-        },
+                age: 40
+            },
 
-        {
-            firstName: 'Davos',
+            {
+                firstName: 'Davos',
 
-            lastName: 'Seaworth',
+                lastName: 'Seaworth',
 
-            age: 55
-        },
+                age: 55
+            },
 
-        {
-            firstName: 'House',
+            {
+                firstName: 'House',
 
-            lastName: 'Stark',
+                lastName: 'Stark',
 
-            age: 14
-        },
+                age: 14
+            },
 
-        {
-            firstName: 'Samwell',
+            {
+                firstName: 'Samwell',
 
-            lastName: 'Tarly',
+                lastName: 'Tarly',
 
-            age: 19
-        },
+                age: 19
+            },
 
-    ]
-
-);
+        ]
+        /*
+        postgres does not support the 'ignoreDuplicates' option.
+        https://stackoverflow.com/questions/31455520/bulkcreate-records-using-sequelize-in-nodejs
+        , {
+            ignoreDuplicates: true
+        }
+        */
+    );
 
 });
 
 module.exports = User;
+

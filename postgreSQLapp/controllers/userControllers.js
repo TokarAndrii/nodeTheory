@@ -1,5 +1,6 @@
 const User = require('../model/user');
 
+
 const Sequelize = require('sequelize');
 
 module.exports = {
