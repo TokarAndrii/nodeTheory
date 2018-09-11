@@ -1,7 +1,6 @@
 const User = require('../model/user');
-
-
 const Sequelize = require('sequelize');
+
 
 module.exports = {
 
@@ -127,6 +126,7 @@ module.exports = {
             .then(() => {
                 console.log('user created!!');
                 next();
+                return null;
             })
             .catch(err => {
 

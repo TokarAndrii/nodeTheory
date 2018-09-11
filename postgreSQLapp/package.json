@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "set NODE_ENV=development&&mocha --no-colors --watch ./test/testApp.js",
+    "test": "set NODE_ENV=development&&mocha --no-colors  --watch ./test/testApp.js",
     "start": "set NODE_ENV=development&&nodemon app"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.38.0",
-    "sinon": "^6.2.0"
+    "sinon": "^6.2.0",
+    "supertest": "^3.3.0"
   }
 }

@@ -8,12 +8,14 @@ const userRouter = require('./routes/userRoutes');
 
 const connect = require('./utils/connect');
 
+
 console.log(process.env.NODE_ENV, ' - process.env.NODE_ENV');
 
 
 app.use(bodyParser.json());                     //for parsing application/json
 
 app.use(bodyParser.urlencoded({extend: true})); // for parsing application/x-www-form-urlencoded
+
 
 app.use('/users/', userRouter);
 
