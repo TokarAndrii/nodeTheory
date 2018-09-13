@@ -1,0 +1,272 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a documenatation of API postgreSQL app (https://github.com/TokarAndrii/nodeTheory/tree/master/postgreSQLapp).",
+    "version": "1.0.0",
+    "title": "postgreSQL app docs",
+    "contact": {
+      "email": "tokar.andrii@gmail.com"
+    }
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "users",
+      "description": "All users endpoints"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/users/": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "GET ALL USERS",
+        "description": "Return an array of USERS",
+        "operationId": "getAllUsers",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "404": {
+            "description": "404 Not Found!"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "DELETE ALL USERS",
+        "description": "Return an empty array of USERS",
+        "operationId": "deleteAllUsers",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "404": {
+            "description": "404 Not Found!"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/{firstname}": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "GET USER BY PARAM - firstName",
+        "description": "Returns a single pet as object",
+        "operationId": "getUserByFirstName",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "firstname",
+            "in": "path",
+            "description": "firstname of user to return",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "404 Not Found!"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "CREATE USER BY PARAM - firstName",
+        "description": "Create a user in the store with raw data and firstName as URL parameter",
+        "operationId": "createUser",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "firstname",
+            "in": "path",
+            "description": "firstname of user that needs to be created",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "404 Not Found!"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "DELETE USER BY PARAM - firstName",
+        "description": "Delete user from DB by param firstName from URL",
+        "operationId": "deleteUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "firstname",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "404 Not Found!"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "users"
+        ],
+        "summary": "UPDATE USER BY PARAM - firstName",
+        "description": "Update user by param - firstName from URL and raw data and retutn nem array of users",
+        "operationId": "updateUserByFirstName",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "firstname",
+            "in": "path",
+            "description": "firstName of user that need to be updated",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "404 Not Found!"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "YYYY-MM-DDTHH:MM:SSZ"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "YYYY-MM-DDTHH:MM:SSZ"
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "YYYY-MM-DDTHH:MM:SSZ"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "YYYY-MM-DDTHH:MM:SSZ"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "The sourse of app",
+    "url": "https://github.com/TokarAndrii/nodeTheory/tree/master/postgreSQLapp"
+  }
+}

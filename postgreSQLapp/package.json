@@ -20,6 +20,8 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.38.0",
     "sinon": "^6.2.0",
-    "supertest": "^3.3.0"
+    "supertest": "^3.3.0",
+    "swagger-ui": "^3.18.3",
+    "swagger-ui-dist": "^3.18.3-republish2"
   }
 }

@@ -21,6 +21,10 @@ POST http://localhost:8080/users/:firstname CREATE ONE user by param
 
 Response is at JSON format
 
+Tests - Postman collection
+
+Documentation - swagger
+
 
 
 

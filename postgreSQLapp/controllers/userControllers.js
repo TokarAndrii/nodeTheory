@@ -26,6 +26,8 @@ module.exports = {
 
     async send(req, res) {
 
+        res.status(200);
+
         res.json(req.users)
     },
 
