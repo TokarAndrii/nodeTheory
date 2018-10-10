@@ -16,7 +16,6 @@ app.use(bodyParser.json());                     //for parsing application/json
 
 app.use(bodyParser.urlencoded({extend: true})); // for parsing application/x-www-form-urlencoded
 
-
 app.use('/users/', userRouter);
 
 

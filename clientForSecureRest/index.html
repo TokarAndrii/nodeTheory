@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="fetchBtn">fetch btn</button>
+<div class="output"></div>
+
+<script>
+    const button = document.getElementById('fetchBtn');
+    console.log(button, 'button')
+    const ISSUER = 'https://dev-204698.oktapreview.com/oauth2/default'
+        , CLIENT_ID = '0oagfktazf6r5QPVG0h7'
+        , CLIENT_SECRET = '1M1gqNkb5hPo2qstEDfiONVizVZBBamYua1hlsPm'
+        , SCOPE = 'secureRest'
+
+    button.addEventListener('click', event => {
+        console.log('click')
+        const token = `${CLIENT_ID}:${CLIENT_SECRET}`
+
+        const uri = `${ISSUER}/v1/token`
+
+        const options = {
+
+            method: 'GET',
+
+            headers: new Headers({
+
+                'authorization': `Basic ${token}`,
+
+                "Content-Type": "application/x-www-form-urlencoded"
+            }),
+
+            mode: 'no-cors'
+        };
+
+
+        const result = fetch(uri, options).then(data=>console.log(data))
+
+
+    })
+</script>
+</body>
+</html>

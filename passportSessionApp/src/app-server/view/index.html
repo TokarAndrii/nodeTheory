@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css"
+          media="screen">
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        html, body {
+            width: 99.5%;
+            height: 99.1%;
+        }
+
+        #borderContainer {
+            width: 100%;
+            height: 100%;
+        }
+
+        #header {
+            text-align: center;
+            background-color: lightcyan;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #left {
+            background-color: lightcyan;
+            width: 17.2%;
+        }
+
+        #main {
+            width: 80%;
+            background-color: lightcyan;
+        }
+
+        #loginLink, #registerLink {
+            text-transform: uppercase;
+            margin: 0px 32px;
+            letter-spacing: 1px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #loginLink:hover, #registerLink:hover {
+            text-decoration: underline;
+            background-color: lightblue;
+        }
+
+        #logsHolder {
+          position: absolute;
+            right: 0;
+        }
+
+        #profileLink{
+            margin-right: 32px;
+        }
+    </style>
+</head>
+<body class="claro">
+
+<div id="borderContainer" data-dojo-type="dijit/layout/BorderContainer">
+    <div id="header" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+        <p>TOP PANE</p>
+        <div id="logsHolder">
+            <a href="login" id="loginLink">login</a>
+            <a href="registration" id="registerLink">registration</a>
+            <a href="profile" id="profileLink">profile</a>
+        </div>
+    </div>
+    <div id="left" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'left'">LEFT PANE</div>
+    <div id="main" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'right'">MAIN PANE</div>
+</div>
+
+<!--<script src="../../dojo/dojo/dojo.js" data-dojo-config="async:true,parseOnLoad:true"></script>-->
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.12.1/dojo/dojo.js"
+        data-dojo-config="async:false,parseOnLoad:true"></script>
+<!--<script>
+    require(
+        ['dojo/parser', 'dijit/layout/BorderContainer', 'dijit/layout/ContentPane', 'dojo/domReady!'],
+        (parser, BorderContainer, ContentPane) => {
+
+        })
+</script>-->
+<!--<script src="./js/main.js"></script>-->
+</body>
+</html>
